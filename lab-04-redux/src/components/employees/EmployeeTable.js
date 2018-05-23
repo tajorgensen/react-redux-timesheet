@@ -6,10 +6,11 @@ import {Table} from 'react-bootstrap';
 
 class EmployeeTable extends Component {
   render() {
+    const actions = this.props.actions;
 
     let employeeRows = this.props.employees.map(employee => {
       return (
-        <EmployeeRow employee={employee} key={employee._id} />
+        <EmployeeRow employee={employee} key={employee._id} actions={actions} />
       );
     });
 
@@ -22,6 +23,7 @@ class EmployeeTable extends Component {
           <th>First Name</th>
           <th>Last Name</th>
           <th>Admin</th>
+          <th>Delete</th>
         </tr>
         </thead>
         <tbody>
